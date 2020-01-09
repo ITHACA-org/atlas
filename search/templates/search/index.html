@@ -7,7 +7,9 @@
   -->
   <ul>
   {% for element in data.value %}
-    <li>ID: {{ element.id }}<br>
+    <li>
+      <img src="data:img/png;base64,{{ element.quicklook }}"><br>
+      ID: {{ element.id }}<br>
       Name: {{ element.name }}<br>
       Creation Date: {{ element.creationDate }}<br/>
       Begin Position: {{ element.beginPosition }}<br/>
@@ -15,7 +17,6 @@
       Size: {{ element.size }}<br/>
       PseudoPath: {{ element.pseudopath }}<br/>
       Footprint: footprint [TODO]<br>
-      Quicklook: quicklook [TODO]<br>
       Downloadable: {{ element.downloadable }}
     </li>
   {% endfor %}
