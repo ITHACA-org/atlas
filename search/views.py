@@ -11,5 +11,4 @@ def index(request):
     f.close()
     data = json.loads(json_string)
     #return HttpResponse("Ciao. Questa è la risposta.")
-    #return HttpResponse(data)
     return render(request, 'search/index.html', {'data': data})
