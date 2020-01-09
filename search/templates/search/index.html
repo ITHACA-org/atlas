@@ -2,4 +2,13 @@
 
 {% block content %}
   <p>Ciao</p>
+  <pre>{{ data.value.0 }}</pre>
+  <ul>
+  {% for element in data.value %}
+    <li>{{ element.id }} - {{ element.name }}<br>
+      {{ element.creationDate }}<br/>
+      {{ element.size }}<br/>
+    </li>
+  {% endfor %}
+  </ul>
 {% endblock content %}
