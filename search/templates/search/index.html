@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <p>Ciao</p>
+  <p>Output.</p>
+  <!-- First element raw output
   <pre>{{ data.value.0 }}</pre>
+  -->
   <ul>
   {% for element in data.value %}
-    <li>{{ element.id }} - {{ element.name }}<br>
-      {{ element.creationDate }}<br/>
-      {{ element.size }}<br/>
+    <li>ID: {{ element.id }}<br>
+      Name: {{ element.name }}<br>
+      Creation Date: {{ element.creationDate }}<br/>
+      Begin Position: {{ element.beginPosition }}<br/>
+      Offline: {{ element.offline }}<br/>
+      Size: {{ element.size }}<br/>
+      PseudoPath: {{ element.pseudopath }}<br/>
+      Footprint: footprint [TODO]<br>
+      Quicklook: quicklook [TODO]<br>
+      Downloadable: {{ element.downloadable }}
     </li>
   {% endfor %}
   </ul>
