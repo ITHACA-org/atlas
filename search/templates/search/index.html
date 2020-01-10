@@ -4,15 +4,17 @@
 
 <div class="col-md">
   <h2>Input</h2>
-  <form>
+  <form method="get">
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Example select</label>
-      <select class="custom-select" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <label for="select-mission">Select Mission</label>
+      <select name="name" class="custom-select" id="mission-name">
+        <option value="*"  selected>All</option>
+        <option value="S1*">Sentinel-1</option>
+        <option value="S2*">Sentinel-2</option>
+        <option value="S3*">Sentinel-3</option>
+        <option value="S5P*">Sentinel-5P</option>
+        <option value="EN*">Envisat</option>
+        <option value="LC08_*">Landsat-8</option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
@@ -20,6 +22,9 @@
 </div>
 <div class="col-md">
   <h2>Output</h2>
+  {% if data %}
+    <p>You searched for TODO!</p>
+  {% endif %}
   {% for element in data.value %}
     <div class="card mb-3">
       <div class="row no-gutters">
