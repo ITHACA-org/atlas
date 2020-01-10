@@ -36,7 +36,7 @@
             PseudoPath: {{ element.pseudopath }}<br/>
             Footprint: footprint [TODO]<br>
             Downloadable: {{ element.downloadable }}</p> -->
-            <p class="card-text"><small class="text-muted">Size: {{ element.size }}</small></p>
+            <p class="card-text"><small class="text-muted">Size: {{ element.size|filesizeformat }}</small></p>
           </div>
         </div>
       </div>
