@@ -7,7 +7,7 @@
   <form>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Example select</label>
-      <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+      <select class="custom-select" id="exampleFormControlSelect1">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -21,12 +21,12 @@
 <div class="col-md">
   <h2>Output</h2>
   {% for element in data.value %}
-    <div class="card mb-3" style="max-width: 640px;">
+    <div class="card mb-3">
       <div class="row no-gutters">
-        <div class="col-md-4">
+        <div class="col-md-2">
           <img src="data:img/png;base64,{{ element.quicklook }}" class="card-img" alt="{{ element.id }}">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
           <div class="card-body">
             <h5 class="card-title">{{ element.name }}</h5>
             <p class="card-text">Creation Date: {{ element.creationDate }}</p>
