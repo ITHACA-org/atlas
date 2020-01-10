@@ -4,11 +4,9 @@ from django.http import HttpResponse
 from django.template import loader
 
 import json
+import requests
 
 def index(request):
-    f = open('output.json')
-    json_string = f.read()
-    f.close()
-    data = json.loads(json_string)
-    #return HttpResponse("Ciao. Questa è la risposta.")
+    response = requests.get('https://catalogue.onda-dias.eu/dias-catalogue/Products?$search="name:*"&$top=3')
+    data = response.json()
     return render(request, 'search/index.html', {'data': data})
