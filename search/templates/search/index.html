@@ -1,24 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <p>Output.</p>
-  <!-- First element raw output
-  <pre>{{ data.value.0 }}</pre>
-  -->
-  <ul>
+
+<div class="col-md">
+  <h2>Input</h2>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Example select</label>
+      <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+<div class="col-md">
+  <h2>Output</h2>
   {% for element in data.value %}
-    <li>
-      <img src="data:img/png;base64,{{ element.quicklook }}"><br>
-      ID: {{ element.id }}<br>
-      Name: {{ element.name }}<br>
-      Creation Date: {{ element.creationDate }}<br/>
-      Begin Position: {{ element.beginPosition }}<br/>
-      Offline: {{ element.offline }}<br/>
-      Size: {{ element.size }}<br/>
-      PseudoPath: {{ element.pseudopath }}<br/>
-      Footprint: footprint [TODO]<br>
-      Downloadable: {{ element.downloadable }}
-    </li>
+    <div class="card mb-3" style="max-width: 640px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="data:img/png;base64,{{ element.quicklook }}" class="card-img" alt="{{ element.id }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ element.name }}</h5>
+            <p class="card-text">Creation Date: {{ element.creationDate }}</p>
+            <!-- <p class="card-text">Begin Position: {{ element.beginPosition }}<br/>
+            Offline: {{ element.offline }}<br/>
+            Size: {{ element.size }}<br/>
+            PseudoPath: {{ element.pseudopath }}<br/>
+            Footprint: footprint [TODO]<br>
+            Downloadable: {{ element.downloadable }}</p> -->
+            <p class="card-text"><small class="text-muted">Size: {{ element.size }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
   {% endfor %}
-  </ul>
+</div>
+
 {% endblock content %}
