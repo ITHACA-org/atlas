@@ -7,16 +7,14 @@ body {
 
 .card {
   border-radius: 0;
-}
-.card .card-title {
-  font-size: 0.875rem;
-}
-.card .card-text {
-  font-size: 0.875rem;
+  .card-title {
+    font-size: 0.875rem;
+  }
+  .card-text {
+    font-size: 0.875rem;
+  }
 }
 
 .card-img {
   border-radius: 0;
 }
-
-/*# sourceMappingURL=style.css.map */
