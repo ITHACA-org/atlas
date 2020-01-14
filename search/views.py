@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
-
+#from .forms import DateForm
 
 import json
 import requests
@@ -20,6 +20,8 @@ def index(request):
                     +name+"  AND beginPosition:[" \
                     +start+"T00:00:00.000Z%20TO%20"+endsensingtime+"T00:00:00.000Z]%22"'
         url = 'https://catalogue.onda-dias.eu/dias-catalogue/Products?$search="name:%s "' %name
+        print("ecco l'url finale" )
+        print(url)
         response = requests.get(url)
         data = response.json()
     return render(request, 'search/index.html', {'data': data})
